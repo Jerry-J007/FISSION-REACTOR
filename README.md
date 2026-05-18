@@ -1,6 +1,7 @@
 # FISSION-REACTOR
 ☢️ FISSION REACTOR
 Hey! Welcome to FISSION REACTOR.
+GAMEPLAY LINK - https://youtu.be/3nIikjW1obo
 
 A fast-paced, grid-based tactical game where up to 4 players fight to trigger massive chain reactions and wipe each other off the map. 
 
