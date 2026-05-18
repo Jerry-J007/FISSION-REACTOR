@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FISSION REACTOR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+
+    <div id="main-menu" class="menu-overlay">
+        <div class="menu-box hud-panel">
+            <h1 class="text-glow-cyan">FISSION REACTOR</h1>
+            <h2 class="text-glow-magenta" style="margin-bottom: 20px;">CONTROL THE REACTION</h2>
+            <div class="menu-options">
+                <button id="btn-play" class="cyber-btn">PLAY ▶</button>
+                <button id="btn-settings" class="cyber-btn">SETTINGS</button>
+                <button id="btn-exit" class="cyber-btn danger-action">EXIT</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="player-select-menu" class="menu-overlay hidden">
+        <div class="menu-box hud-panel">
+            <h2 class="text-glow-cyan" style="margin-bottom: 20px;">SELECT PLAYERS</h2>
+            <div class="menu-options">
+                <button class="cyber-btn btn-player-count" data-count="2">2 PLAYERS</button>
+                <button class="cyber-btn btn-player-count" data-count="3">3 PLAYERS</button>
+                <button class="cyber-btn btn-player-count" data-count="4">4 PLAYERS</button>
+                <button id="btn-back" class="cyber-btn danger-action" style="margin-top: 15px;">BACK</button>
+            </div>
+        </div>
+    </div>
+   <div id="settings-menu" class="menu-overlay hidden">
+        <div class="menu-box hud-panel">
+            <h2 class="text-glow-cyan" style="margin-bottom: 20px;">SYSTEM SETTINGS</h2>
+            
+            <div class="settings-section" style="margin-bottom: 25px; text-align: left; background: rgba(0,0,0,0.6); padding: 15px 25px; border-radius: 4px; border: 1px solid var(--grid-line);">
+                <h3 class="text-glow-cyan" style="text-align: center; margin-bottom: 15px; font-weight: 900;">CREDITS</h3>
+                
+                <p style="color: var(--neon-cyan); font-size: 0.9rem; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                    <span>Lead Developer:</span> <span style="color: white;">JERRY</span>
+                </p>
+                <p style="color: var(--neon-cyan); font-size: 0.9rem; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                    <span>UI / UX Design:</span> <span style="color: white;">JERRY</span>
+                </p>
+                <p style="color: var(--neon-cyan); font-size: 0.9rem; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                    <span>Physics Engine:</span> <span style="color: white;">JERRY</span>
+                </p>
+                <p style="color: var(--neon-cyan); font-size: 0.9rem; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                    <span>Quality Assurance:</span> <span style="color: white;">JERRY</span>
+                </p>
+                <p style="color: var(--neon-cyan); font-size: 0.9rem; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                    <span>CATERING & SNACKS</span> <span style="color: white;">JERRY</span>
+                </p>
+            </div>
+
+            <div class="menu-options">
+                <button id="btn-settings-back" class="cyber-btn danger-action">BACK</button>
+            </div>
+        </div>
+    </div>
+    <div id="game-wrapper" class="game-wrapper hidden">
+       <header class="top-bar hud-panel">
+            <button id="sys-menu-btn" class="cyber-btn hidden-mobile">MENU</button>
+            
+            <div class="timers text-glow-cyan">
+                <div id="game-timer">Total Time: 0:00</div>
+                <div id="player-timers" class="player-timers-container"></div>
+            </div>
+            
+            <div class="turn-indicator alert-box">TURN: PLAYER 1</div>
+        </header>
+
+        <main class="main-layout">
+            <aside class="side-panel hud-panel">
+                <div class="panel-header text-glow-cyan">PLAYERS</div>
+                <div id="dynamic-powerup-list" class="powerup-list">
+                    </div>
+               <div class="powerup-actions">
+                    <button id="btn-bomb" class="cyber-btn disabled">DEPLOY BOMB</button>
+                     <button id="btn-hack" class="cyber-btn disabled">OVERRIDE</button>
+                </div>
+            </aside>
+
+            <div class="board-wrapper hud-panel">
+                <div id="board-container"></div> 
+            </div>
+
+            <aside class="side-panel hud-panel">
+                <div class="panel-header text-glow-cyan">HISTORY</div>
+                <div id="move-history" class="history-box"></div>
+            </aside>
+        </main>
+
+        <footer class="bottom-bar">
+            <button id="pause-btn" class="cyber-btn main-action">PAUSE</button>
+            <button id="reset-btn" class="cyber-btn danger-action">RESET</button>
+        </footer>
+    </div>
+    <script src="audio_manager.js"></script>
+    <script src="state_manager.js"></script>
+    <script src="game_engine.js"></script>
+    <script src="ui_controller.js"></script>
+    <script src="event_handler.js"></script>
+</body>
+</html>
